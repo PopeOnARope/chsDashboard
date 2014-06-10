@@ -1,0 +1,35 @@
+  <h1>header</h1>
+      <h2>header</h2></div>
+      <h3>header</h3>
+      <h4>header</h4>
+      <h5>header</h5>
+      <h6>header</h6>
+
+  <div ng-controller="WeatherCtrl">
+    <div class="weather">
+      Charleston, SC {{(weather.data.main.temp/10*9/5)+32}}
+    </div>
+  </div>
+  <div class="col-md-8" ng-controller="EventsCtrl">
+    <div ng-repeat="event in events">
+      <div ng-repeat="artist in event.artists" class="events">
+        <div class="eventContainer">
+        <img ng-src="http://www.bandsintown.com/{{event.artists[0].name}}/photo/medium.jpg" ng-alt="{{event.artists[0].name}}">
+        {{event.artists[0].name}}
+        {{event.venue.name}}
+        {{event.datetime}}
+        
+        <!-- <img ng-src="https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q="+event.artits[0].name+".responseData.results.url" alt=""> -->
+      </div>
+      </div>
+      
+
+    </div>
+  </div>
+  <div class="restaurants col-md-8" ng-controller="RestaurantsCtrl">
+    <div ng-repeat="restaurant in restaurants">
+      {{restaurant.name}}
+    </div>
+  </div>
+
+

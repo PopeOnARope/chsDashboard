@@ -1,0 +1,28 @@
+h2{
+	font-family: "hoeffler text";
+	margin-bottom: 0;
+}
+h3{
+	font-weight: 100;
+	color: rgba(20,40,200,1);
+	margin: 0;
+}
+h4{
+	font-weight: 100;
+}
+.events{
+	display: inline-block;
+}
+.eventContainer{
+	border: 1px solid #aaa;
+	img{
+		width: 100%;
+	}
+	margin: 1%;
+	width: 40%;
+
+}
+.container{
+	width: 80%;
+	margin: auto auto;
+}

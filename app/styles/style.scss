@@ -9,18 +9,22 @@ h3{
 }
 h4{
 	font-weight: 100;
+	margin: 0px;
 }
 .events{
 	display: inline-block;
+	border: 1px solid #aad;
 }
 .eventContainer{
 	border: 1px solid #aaa;
+	margin: 1%;
+	width: 40%;
+}
+.imgdiv{
+	border:1px solid #0ee;
 	img{
 		width: 100%;
 	}
-	margin: 1%;
-	width: 40%;
-
 }
 .container{
 	width: 80%;

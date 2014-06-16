@@ -8,6 +8,7 @@ angular.module('chsdashboardApp.controllers', [])
 .controller('WeatherCtrl', function($scope, WeatherFactory){
 	var locations='Folly+%20Beach'
 	WeatherFactory.async(locations).then(function(data) {
+		console.log(data);
 		var temp = data.data.main.temp/10*9/5 + 32;
 		$scope.temp = Math.floor(temp);
 		console.log($scope.temp)
@@ -25,25 +26,45 @@ angular.module('chsdashboardApp.controllers', [])
 	});
 })
 
-.controller('RestaurantsCtrl', function($scope, RestaurantsFactory, $routeParams){
+.controller('RestaurantsCtrl', function($scope, RestaurantsFactory, $routeParams, $window){
 	var cuisine;
+	$scope.window=$window;
 	RestaurantsFactory.async().then(function(data){
 		$scope.restaurants = data.data.response.data;
 		console.log($scope.restaurants)
-		var find = function(id, restArray) {
-		var i;
-		var selected;
-		for(i=0; i<restArray.length; i++){
-			if(id === restArray[i].factual_id){
-				selected = restArray[i];
+		var id=({ id: $routeParams.factual_id }).id;
+		console.log("id="+id)
+
+		var find=function(id, arr){
+			var i;
+			var selected;
+			for(i=0; i<arr.length; i++){
+				if(id===arr[i].factual_id){
+				selected=arr[i];
+				}		
 			}
+			return selected;
+			console.log("selected="+selected);
 		}
-		return selected;
-		}
-		var id=$routeParams;
-		$scope.restaurant=RestaurantsFactory.find(id, $scope.restraurants)
+		$scope.restaurant=find(id, $scope.restaurants);
+		console.log($scope.restaurant);
+
+		var score=function(n, star){
+			var i;
+			var markup;
+			for(i=0;i<n;i++){
+				markup+=star
+			}
+			return markup;
+		};
+		var stars='<span class="glyphicon glyphicon-star"></span>'
+		var ResScore=score($scope.restaurant.rating, stars);
+		console.log(ResScore);
+		$("#rating").html(ResScore);
+
+		});
+
 		});	
-})
 
 
 

@@ -32,8 +32,8 @@ angular.module('chsdashboardApp.services', [])
 .factory('RestaurantsFactory', function($http){
 	var restaurantsPromise;
 	 return{
-		async: function(cuisine){
-			restaurantsPromise = $http.get('http://api.v3.factual.com/t/restaurants-us?q=sc,' + cuisine + '&filters={"locality":"charleston"}&limit=50&KEY=9McuJvuaxUh6XiYFFG2g1tUkcZM9eFd5GHTpKNID').then(function(response){
+		async: function(lat, lon, cuisine){
+			restaurantsPromise = $http.get('http://api.v3.factual.com/t/restaurants-us?geo={"$circle":{"$center":[34.06021,-118.41828],"$meters": 5000}}&KEY=9McuJvuaxUh6XiYFFG2g1tUkcZM9eFd5GHTpKNID').then(function(response){
 					return response;
 				})
 			return restaurantsPromise;

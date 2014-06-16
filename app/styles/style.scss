@@ -11,9 +11,19 @@ h4{
 	font-weight: 100;
 	margin: 0px;
 }
+body{
+	padding: 0;
+	background-color: 071A71;
+}
 .events{
 	display: inline-block;
 	border: 1px solid #aad;
+	height: 500px;
+	overflow: scroll;
+}
+.event{
+	border: 1px solid #999;
+	padding: 1%;
 }
 .eventContainer{
 	border: 1px solid #aaa;
@@ -27,6 +37,28 @@ h4{
 	}
 }
 .container{
-	width: 80%;
-	margin: auto auto;
+	width: 100%;
+	margin: 0 0;
+	padding: 0;
+
+}
+.header1{
+	background: #1533ae;
+	width: 100%;
+	border-bottom: 3px solid #fd0;
+}
+.weather{
+	padding: 2%;
+	color: #eee;
+}
+.sidebar{
+	height: 500px;
+	width: 50px;
+	border: 1px solid black;
+	margin-left: 0%;
+}
+.restaurants{
+	border: 1px solid black;
+	height: 250px;
+	overflow: scroll;
 }

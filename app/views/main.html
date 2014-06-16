@@ -1,39 +1,48 @@
-  <h1>header</h1>
-      <h2>header</h2></div>
-      <h3>header</h3>
-      <h4>header</h4>
-      <h5>header</h5>
-      <h6>header</h6>
-  <div class="header">
-    
-  </div>
-
-  <div ng-controller="WeatherCtrl">
+  
+  <div class="header1 row">
+     <div ng-controller="WeatherCtrl">
     <div class="weather">
-      Charleston, SC {{(weather.data.main.temp/10*9/5)+32}}
+      {{name}} {{temp}}°F
+      <img ng-src="http://openweathermap.org/img/w/{{icon}}.png" alt="">
     </div>
   </div>
-  <div class="col-md-6 events" ng-controller="EventsCtrl">
-    <div ng-repeat="event in events">
-      <div ng-repeat="artist in event.artists" class="events">
-        <div class="imgdiv col-md-8">
-          <img ng-src="http://www.bandsintown.com/{{event.artists[0].name}}/photo/medium.jpg" ng-alt="{{event.artists[0].name}}">
-        </div>
-        <div class="col-md-4">
-          <h4>{{event.artists[0].name}}</h4><i>@</i>
-          <h4>{{event.venue.name}}</h4>
-          <h5>{{event.datetime}}</h5>
-          
-        </div>
-      </div>
-      
+  </div>
 
+
+    <!-- MUSIC STUFF -->
+
+<h2>Live Music Calendar:</h2>
+  <div class="col-md-4 events" ng-controller="EventsCtrl">
+    <div ng-repeat="event in events">
+      <div ng-repeat="artist in event.artists | unique:'event.artists'">
+          <div class="imgdiv col-md-4">
+            <img ng-src="http://www.bandsintown.com/{{event.artists[0].name}}/photo/medium.jpg" ng-alt="{{event.artists.name}}">
+            <a ng-href="#/event-detail/{{event.id}}" class="glyphicon glyphicon-music"></a>
+          </div>
+          <div class="col-md-8">
+            <h5>{{event.artists[0].name}}</h5><i>@</i>
+            <h5>{{event.venue.name}}</h5>
+            <h6>{{event.datetime}}</h6>
+          </div>
+      </div>
     </div>
   </div>
+
+
+  <!-- RESTAURANT STUFF -->
+
   <div class="restaurants col-md-6" ng-controller="RestaurantsCtrl">
     <div ng-repeat="restaurant in restaurants">
-      {{restaurant.name}}
+      <a ng-href="#/restaurant-detail/{{restaurant.factual_id}}" class="glyphicon glyphicon-map-marker"></a>{{restaurant.name}}
     </div>
   </div>
+
+
+  <!-- TWITTER STUFF -->
+
+  <div class="tweets col-md-6">
+  <a class="twitter-timeline" href="https://twitter.com/CHSDashboard/lists/restaurants" data-widget-id="476383533938642944">Tweets from https://twitter.com/CHSDashboard/lists/restaurants</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
 
 

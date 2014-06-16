@@ -1,0 +1,11 @@
+<div class="col-md-4 events" ng-controller="EventsCtrl">
+          <div class="imgdiv col-md-4">
+            <img ng-src="http://www.bandsintown.com/{{event.artists[0].name}}/photo/medium.jpg" ng-alt="{{event.artists.name}}">
+            <a ng-href="#/event-detail/{{event.id}}" class="glyphicon glyphicon-music"></a>
+          </div>
+          <div class="col-md-8">
+            <h5>{{event.artists[0].name}}</h5><i>@</i>
+            <h5>{{event.venue.name}}</h5>
+            <h6>{{event.datetime}}</h6>
+          </div>
+  </div>

@@ -1,0 +1,21 @@
+  <div class="col-md-12 row header2">
+  	<div class="col-md-4"><a href="#/main"> <h4><< back to dashboard</h4></a></div>
+  	<div class="col-md-4"><h3>Live Music Calendar</h3></div>
+  	<div class="col-md-4"></div>
+  </div>
+  <div class="col-md-12 bTop" ng-controller="EventsCtrl">
+    <div ng-repeat="event in events">
+        <div class="eventDiv col-xs-4 row">
+          <div class="imgdiv col-sm-12">
+            <div class="bigImgDiv"><a ng-href="#/event-detail/{{event.id}}"><img class="bigImg" ng-src="http://www.bandsintown.com/{{event.artists[0].name}}/photo/large.jpg" ng-alt="{{event.artists.name}}"></a>
+	            <div class="float-up">
+	            	<h3><span>{{event.artists[0].name}}</span></h3>
+    				<span><i>@</i></span>
+    	            <h4><span>{{event.venue.name}}</span></h4>
+    	            <h5><span>{{event.datetime | date:'medium'}}</span></h5>
+    	        </div>
+        	</div>
+          </div>
+        </div>
+    </div>
+  </div>

@@ -18,65 +18,104 @@ angular.module('chsdashboardApp.controllers', [])
 	});
 })
 
-.controller('EventsCtrl', function($scope, EventsFactory){
+.controller('EventsCtrl', function($scope, EventsFactory, $routeParams){
+	// $scope.window=$window;
+	$scope.map={
+		zoom: 8,
+		draggable: true
+		};
+
 	EventsFactory.async().then(function(data){
+
 		$scope.events = data.data;
-		console.log($scope.events)
+		console.log($scope.events);
+		var eventId = Number($routeParams.id);
+		console.log($scope.events[0].id);
 
-	});
-})
-
-.controller('RestaurantsCtrl', function($scope, RestaurantsFactory, $routeParams, $window){
-	var cuisine;
-	$scope.window=$window;
-	RestaurantsFactory.async().then(function(data){
-		$scope.restaurants = data.data.response.data;
-		console.log($scope.restaurants)
-		var id=({ id: $routeParams.factual_id }).id;
-		console.log("id="+id)
-
-		var find=function(id, arr){
+		var findEvent=function(id, arr){
 			var i;
 			var selected;
 			for(i=0; i<arr.length; i++){
-				if(id===arr[i].factual_id){
+				
+				if(eventId === arr[i].id){
 				selected=arr[i];
 				}		
 			}
 			return selected;
-			console.log("selected="+selected);
 		}
-		$scope.restaurant=find(id, $scope.restaurants);
-		console.log($scope.restaurant);
-
-		var score=function(n, star){
-			var i;
-			var markup;
-			for(i=0;i<n;i++){
-				markup+=star
+		$scope.$watch('map', function(){
+			console.log("$watch fired")
+		})
+		$scope.event= findEvent(eventId, $scope.events);
+		$scope.map = {
+			center:{
+				latitude: $scope.event.venue.latitude,
+				longitude: $scope.event.venue.longitude
+			},
+			marker:{
+				latitude: $scope.event.venue.latitude,
+				longitude: $scope.event.venue.longitude
 			}
-			return markup;
-		};
-		var stars='<span class="glyphicon glyphicon-star"></span>'
-		var ResScore=score($scope.restaurant.rating, stars);
-		console.log(ResScore);
-		$("#rating").html(ResScore);
+		}
+		console.log("marker is ", $scope.map.marker)
+		console.log($scope.event);
+	});
+})
 
-		});
+.controller('RestaurantsCtrl', function($scope, RestaurantsFactory, $routeParams, geolocation, $window){
+	var cuisine;
+	$scope.window=$window;
+	// $scope.currentPosition = {
+	// lat: 0,
+	// lon: 0
+	// };
 
-		});	
+		// geolocation.getLocation().then(function(position){
+		// 	$scope.currentPosition = {
+		// 		lat: position.coords.latitude,
+		// 		lon: position.coords.longitude
+		// 		};
+		// });
 
+	// $scope.$watch('currentPosition', function() {
+	// 	console.log($scope.currentPosition);
+	// 	console.log('position changed!');
 
+		// RestaurantsFactory.async($scope.currentPosition.lat, $scope.currentPosition.lon).then(function(data){
+			RestaurantsFactory.async().then(function(data){
+			$scope.restaurants = data.data.response.data;
+			console.log($scope.restaurants)
+			var id=({ id: $routeParams.factual_id }).id;
+			console.log("id="+id)
 
-		// $scope.restaurant = RestaurantsFactory.find({ id: $routeParams.id })
-		// var find = function(id, restArray) {
-		// 	var selected;
-		// 	for(var i=0; i<restArray.length; i++) {
-		// 		if(id === restArray[i].factual_id) {
-		// 			selected = restArray[i];
-		// 		}
-		// 	}
-		// 	return selected;
+			var find=function(id, arr){
+				var i;
+				var selected;
+				for(i=0; i<arr.length; i++){
+					if(id===arr[i].factual_id){
+					selected=arr[i];
+					}		
+				}
+				return selected;
+				console.log("selected="+selected);
+			}
+			$scope.restaurant=find(id, $scope.restaurants);
+			console.log($scope.restaurant);
 
-		// }
-	
+			var score=function(n, star){
+				var i;
+				var markup;
+				for(i=0;i<n;i++){
+					markup+=star
+				}
+				return markup;
+			};
+			var stars='<span class="glyphicon glyphicon-star"></span>'
+			var ResScore=score($scope.restaurant.rating, stars);
+			console.log(ResScore);
+			$("#rating").html(ResScore);
+
+			});
+	//}
+	// ); 
+});	

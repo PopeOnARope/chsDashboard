@@ -1,64 +1,165 @@
-h2{
-	font-family: "hoeffler text";
-	margin-bottom: 0;
-}
-h3{
-	font-weight: 100;
-	color: rgba(20,40,200,1);
-	margin: 0;
-}
-h4{
-	font-weight: 100;
-	margin: 0px;
-}
+
 body{
-	padding: 0;
-	background-color: 071A71;
+	background-color: #071A71;
+	background-image: url('../images/show.jpg');
+	background-attachment: fixed;
+	background-height: 100%;
+	color: #eee;
+	padding: 0px;
 }
 .events{
-	display: inline-block;
-	border: 1px solid #aad;
+	// border: 1px solid #aad;
 	height: 500px;
 	overflow: scroll;
 }
-.event{
-	border: 1px solid #999;
-	padding: 1%;
+.center{
+	text-align:center;
+	padding: 0px;
 }
+.event{
+	// border: 1px solid #999;
+	padding: 1%;
+	background-color: rgba(50,50,50,0.9);
+}
+// .flex{
+// 	display: -webkit-flex;
+// 	-webkit-flex-direction: row;
+// 	-webkit-justify-content: space-between;
+// 	-webkit-flex-wrap: wrap;
+// }
 .eventContainer{
-	border: 1px solid #aaa;
+	// border: 1px solid #aaa;
 	margin: 1%;
 	width: 40%;
 }
+.rest{
+	ul{list-style:none;}
+}
 .imgdiv{
-	border:1px solid #0ee;
+	// border:1px solid #0ee;
 	img{
 		width: 100%;
 	}
+	background-color:#222;
 }
+.bigImgDiv{
+	position:relative;
+	height: 175px;
+	background-size:100%;
+	background-repeat:no-repeat;
+	margin: 3%;
+	z-index: 0;
+}
+
+// .eventDiv{
+// margin-bottom:5%;
+// width: 25px;
+// }
 .container{
-	width: 100%;
-	margin: 0 0;
-	padding: 0;
+	background: rgba(50,50,50,0.9);
 
 }
+.float-up{
+	position:absolute;
+	span{
+		background-color:rgba(0,0,0,0.8);
+		padding:0px;
+	}
+	h3,h4,h5,h6{
+		margin:0px;
+	}
+
+}
+
 .header1{
-	background: #1533ae;
-	width: 100%;
-	border-bottom: 3px solid #fd0;
+	background-image: url('../images/street.jpg');
+	background-size:100%;
+	height: 150px;
+	color: #eee;
+	border-bottom:1px solid #bbb;
+	h1{
+		padding:0px;
+		font-weight: 100;
+		letter-spacing: 10px;
+		font-size: 3.5em;
+		text-align: center;
+		text-rendering: far-apart;
+	}
+	span{
+		font-size: 3em;
+		
+		font-family: 'Dorsa';
+	}
+
+}
+.header2{
+	background-color:rgba(50,50,50,0.5);
+}
+.bTop{
+	border-top: 1px solid rgba(150,150,200,0.9);
+	border-left: 3px solid rgba(0,0,0,0.25);
+	overflow:scroll;
+	height: 500px;
 }
 .weather{
-	padding: 2%;
 	color: #eee;
+	top: -25px;
+	background-color: rgba(0,0,0,0.4);
+}
+.twitter-timeline{
+	height:500px;
 }
 .sidebar{
+	background-color: #222;
 	height: 500px;
-	width: 50px;
-	border: 1px solid black;
-	margin-left: 0%;
+	margin-right: 0px;
+}
+.nav{
+	height: 100%;
+}
+.nav-sidebar{
+
 }
 .restaurants{
-	border: 1px solid black;
-	height: 250px;
+	// border: 1px solid black;
+	height: 500px;
 	overflow: scroll;
+}
+.fixed{
+	position:static;
+	z-index: 2;
+	background-color:rgba(75,75,100,0.4);
+}
+.eventImg{
+	width:80%;
+	padding-left:10%;
+}
+
+#map-canvas{
+	height: 100px;
+}
+.angular-google-map-container { 
+	height: 400px;
+	// border: 1px solid #eee;
+}
+
+@media(max-width:555px){
+	.dB{
+		display: none;
+	}
+}
+@media(max-width: 767px){
+	.col-sm-4{
+		padding: 0px;
+		margin: 0px;
+	}
+	h1,h2,h3,h4,h5,h6{
+		text-align:center;
+	}
+	.eventImg{
+		width:100%;
+		padding:0px;
+		margin:0px;
+	}
+
 }

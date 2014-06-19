@@ -2,6 +2,7 @@
   "name": "chsdashboard",
   "version": "0.0.0",
   "dependencies": {
+    "lodash": "^2.4.1",
     "underscore": "^1.6.0"
   },
   "devDependencies": {

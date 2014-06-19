@@ -1,38 +1,36 @@
   
-  <div class="header1 row">
-     <div ng-controller="WeatherCtrl">
-    <div class="weather">
-      {{name}} {{temp}}°F
-      <img ng-src="http://openweathermap.org/img/w/{{icon}}.png" alt="">
-    </div>
-  </div>
-  </div>
+
+
+  <!-- SIDEBAR NAV -->
+
+
+
 
 
     <!-- MUSIC STUFF -->
 
-<h2>Live Music Calendar:</h2>
-  <div class="col-md-4 events" ng-controller="EventsCtrl">
+
+  <div class="col-sm-4 events bTop" ng-controller="EventsCtrl">
+    <div class="col-xs-12 row"><h3>Live Music Calendar: <a class="btn btn-large btn-primary" href="#/music-calendar">expand</a></h3></div>
     <div ng-repeat="event in events">
-      <div ng-repeat="artist in event.artists | unique:'event.artists'">
-          <div class="imgdiv col-md-4">
-            <img ng-src="http://www.bandsintown.com/{{event.artists[0].name}}/photo/medium.jpg" ng-alt="{{event.artists.name}}">
-            <a ng-href="#/event-detail/{{event.id}}" class="glyphicon glyphicon-music"></a>
+        <div class="eventDiv row">
+          <div class="imgdiv col-sm-6">
+            <a ng-href="#/event-detail/{{event.id}}"><img ng-src="http://www.bandsintown.com/{{event.artists[0].name}}/photo/large.jpg" ng-alt="{{event.artists.name}}"></a>
           </div>
-          <div class="col-md-8">
-            <h5>{{event.artists[0].name}}</h5><i>@</i>
+          <div class="col-md-6">
+            <h5>{{event.artists[0].name}}</h5><span>@</span>
             <h5>{{event.venue.name}}</h5>
-            <h6>{{event.datetime}}</h6>
+            <h6>{{event.datetime | date:'medium'}}</h6>
           </div>
-      </div>
+        </div>
     </div>
   </div>
 
 
   <!-- RESTAURANT STUFF -->
 
-  <div class="restaurants col-md-6" ng-controller="RestaurantsCtrl">
-    <div ng-repeat="restaurant in restaurants">
+  <div class="restaurants col-sm-4 bTop" ng-controller="RestaurantsCtrl">
+    <div class="" ng-repeat="restaurant in restaurants">
       <a ng-href="#/restaurant-detail/{{restaurant.factual_id}}" class="glyphicon glyphicon-map-marker"></a>{{restaurant.name}}
     </div>
   </div>
@@ -40,8 +38,8 @@
 
   <!-- TWITTER STUFF -->
 
-  <div class="tweets col-md-6">
-  <a class="twitter-timeline" href="https://twitter.com/CHSDashboard/lists/restaurants" data-widget-id="476383533938642944">Tweets from https://twitter.com/CHSDashboard/lists/restaurants</a>
+  <div class="tweets col-sm-4 bTop">
+  <a class="twitter-timeline" href="https://twitter.com/CHSDashboard/lists/restaurants" data-theme="dark" data-chrome="noheader transparent"data-widget-id="476383533938642944">Tweets from https://twitter.com/CHSDashboard/lists/restaurants</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 </div>
 

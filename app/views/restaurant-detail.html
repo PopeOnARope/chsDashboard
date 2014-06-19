@@ -1,25 +1,22 @@
 <div ng-controller="RestaurantsCtrl">
 
-	<div class="col-md-6">
+	<div class="col-md-5 rest">
 		<ul>
 			<li><h2>{{restaurant.name}} <li id="rating"></li>
-				</h2><a ng-href="tel:{{restaurant.tel}} ">{{restaurant.tel}}</a></li>
-		
-				<li>{{restaurant.address}} {{restaurant.address_extended}}</li>
-				<li>{{restaurant.locality}},{{restaurant.region}}</li> 
+			</h2><a ng-href="tel:{{restaurant.tel}} ">{{restaurant.tel}}</a></li>
+	
+			<li>{{restaurant.address}} {{restaurant.address_extended}}</li>
+			<li>{{restaurant.locality}},{{restaurant.region}}</li> 
 
-		
-				<li><strong>Hours: </strong> {{restaurant.hours_display}}</li>
-		
-				<li><strong>Cuisine: </strong><span ng-repeat="cuisine in restaurant.cuisine">{{cuisine}}, </span></li>
+	
+			<li><strong>Hours: </strong> {{restaurant.hours_display}}</li>
+	
+			<li><strong>Cuisine: </strong><span ng-repeat="cuisine in restaurant.cuisine">{{cuisine}}, </span></li>
 		</ul>
-		
-
-
  		
 	</div>
 	<div>
-		<div class="restImg">
+		<div class="restImg col-md-4">
 			<img ng-src="http://maps.googleapis.com/maps/api/streetview?size=400x400&location={{restaurant.address}},{{restaurant.locality}}{{restaurant.postcode}}&fov=100&pitch=10">
 		</div>
 	</div>

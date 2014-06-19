@@ -20,7 +20,7 @@ angular.module('chsdashboardApp.services', [])
 	var eventsPromise;
 	 return{
 	 	async: function() {
-	 		eventsPromise = $http.jsonp('http://api.bandsintown.com/events/search?location=Charleston,SC&radius=10&format=json&app_id=CHSdashboard&callback=JSON_CALLBACK').then(function(data){
+	 		eventsPromise = $http.jsonp('http://api.bandsintown.com/events/search?location=Charleston,SC&limit=75&radius=12&format=json&app_id=CHSdashboard&callback=JSON_CALLBACK').then(function(data){
 	 			return data;
 	 		});
 	 		return eventsPromise;
@@ -29,14 +29,14 @@ angular.module('chsdashboardApp.services', [])
 
 })
 
-.factory('RestaurantsFactory', function($http){
-	var restaurantsPromise;
-	 return{
-		async: function(lat, lon, cuisine){
-			restaurantsPromise = $http.get('http://api.v3.factual.com/t/restaurants-us?geo={"$circle":{"$center":[34.06021,-118.41828],"$meters": 5000}}&KEY=9McuJvuaxUh6XiYFFG2g1tUkcZM9eFd5GHTpKNID').then(function(response){
-					return response;
-				})
-			return restaurantsPromise;
-		}
-	};
-});
+// .factory('RestaurantsFactory', function($http){
+// 	var restaurantsPromise;
+// 	 return{
+// 		async: function(){
+// 			restaurantsPromise = $http.get('http://api.v3.factual.com/t/restaurants-us?geo={"$circle":{"$center":[32.781041, -79.931725],"$meters": 1000}}&limit=50&KEY=UB7s5HMDg9g3ugaIhDTSKiOEsOfcVcd8WteJyJLO').then(function(response){
+// 					return response;
+// 				})
+// 			return restaurantsPromise;
+// 		}
+// 	};
+// });

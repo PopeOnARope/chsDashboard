@@ -8,7 +8,8 @@ angular
     'ngRoute',
     'chsdashboardApp.controllers',
     'chsdashboardApp.services',
-    'ui.utils'
+    'ui.utils',
+    'geolocation'
     ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -21,6 +22,10 @@ angular
       })
       .when('/event-detail/:id',{
         templateUrl: 'views/event-detail.html',
+        controller: 'EventsCtrl'
+      })
+      .when('/music-calendar',{
+        templateUrl: 'views/music-calendar.html',
         controller: 'EventsCtrl'
       })
       .otherwise({

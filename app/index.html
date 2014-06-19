@@ -5,14 +5,50 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    
+    <link href='http://fonts.googleapis.com/css?family=Dorsa' rel='stylesheet' type='text/css'>  
+    <link rel="stylesheet" type="text/css" href="styles/typography.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/style.css">
+
+    
     <!-- endbuild -->
   </head>
   <body ng-app="chsdashboardApp">
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+
    
-    <div class="container" ng-view=""></div>
+    <div class="container">
+        <div class="col-12 header1 row">
+            <h1><strong>CHS</strong> <span class="dB">Dashboard</span></h1>
+            
+        </div>
+        <div ng-controller="WeatherCtrl" class="weather center row">
+            <div class="col-sm-4 row">{{name}} {{temp}}°F
+                <img ng-src="http://openweathermap.org/img/w/{{icon}}.png" alt=""></div>
+            <div class="col-sm-4"><br>current drive time to Folly beach: <a>25 min</a></div>
+            <div class="col-sm-4"><br>current drive time to Sullivans Island: <a>12 min</a></div>
+        </div>
+        <!-- <div class="col-sm-2 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li><h4><a href="#/main">home</a></h4></li>
+                <li><h4><a href="">music</a></h4></li>
+                <li><h4><a href="">dining</a></h4></li>
+                <li><h4><a href="">social</a></h4></li>
+            </ul>
+        </div> -->
+
+        <div ng-view=""></div>
+
+    </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -45,15 +81,25 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-ui-utils/ui-utils.min.js"></script>
+    <script type="text/javascript" src="bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
+    
+
+
+
+
   
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        
+        <!-- // <script type="text/javascript" src="scripts/lodash.js"></script>
+        // <script src='http://maps.googleapis.com/maps/api/js?sensor=false'></script> -->
+         <!-- <script type="text/javascript" src="bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script> -->
         <script src="scripts/app.js"></script>
+        <script type="text/javascript" src="scripts/init.js"></script>
         <script src="scripts/services.js"></script>
         <script src="scripts/controllers/controllers.js"></script>
-<!--         // <script src="scripts/googlemaps.js"></script> -->
         <script type="text/javascript" src="scripts/jquerystuff.js"></script>
         <!-- endbuild -->
 </body>

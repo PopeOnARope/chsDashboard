@@ -9,7 +9,8 @@ angular
     'chsdashboardApp.controllers',
     'chsdashboardApp.services',
     'ui.utils',
-    'geolocation'
+    'geolocation',
+    'ui.bootstrap'
     ])
   .config(function ($routeProvider) {
     $routeProvider

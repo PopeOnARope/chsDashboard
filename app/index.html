@@ -27,11 +27,12 @@
 
    
     <div class="container">
-        <div class="col-12 header1 row">
-            <h1><strong>CHS</strong> <span class="dB">Dashboard</span></h1>
-            
-        </div>
-        <div ng-controller="WeatherCtrl" class="weather center row">
+        <a ng-href="#/main">
+            <div class="col-12 header1 row">
+                <h1><strong>CHS</strong> <span class="dB">Dashboard</span></h1>  
+            </div>
+        </a>
+        <div ng-controller="WeatherCtrl" class="weather center row dB">
             <div class="col-sm-4 row">{{name}} {{temp}}°F
                 <img ng-src="http://openweathermap.org/img/w/{{icon}}.png" alt=""></div>
             <div class="col-sm-4"><br>current drive time to Folly beach: <a>25 min</a></div>
@@ -82,6 +83,7 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-ui-utils/ui-utils.min.js"></script>
     <script type="text/javascript" src="bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     
 
 

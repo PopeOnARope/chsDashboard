@@ -1,7 +1,7 @@
 <div ng-controller="EventsCtrl">
   <div class="col-md-12 row header2 center">
     <div class="col-xs-4"><a href="#/main"> <h4><< back to dashboard</h4></a></div>
-    <div class="col-xs-4"><h4><a href="#/music-calendar"><< back to music calendar</a></h4></div>
+    <div class="dB col-xs-4"><h4><a href="#/music-calendar"><< back to music calendar</a></h4></div>
     <div class="col-sm-4"></div>
   </div>
   <div class="col-md-6">
@@ -14,7 +14,6 @@
     <img class="eventImg" ng-src="http://www.bandsintown.com/{{artist.name}}/photo/large.jpg" ng-alt="{{event.artist.name}}">
     </div>
     <a class="fb-share-button csmb facebook" data-href="{{}}">share</a>  
-    {{event.venue.longitude}}
   </div>
 
   <!-- MAP -->

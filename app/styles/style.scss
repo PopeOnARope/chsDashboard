@@ -7,6 +7,10 @@ body{
 	color: #eee;
 	padding: 0px;
 }
+a{
+	text-decoration:none;
+	}
+
 .events{
 	// border: 1px solid #aad;
 	height: 500px;
@@ -68,7 +72,6 @@ body{
 	h3,h4,h5,h6{
 		margin:0px;
 	}
-
 }
 
 .header1{
@@ -143,9 +146,39 @@ body{
 	// border: 1px solid #eee;
 }
 
-@media(max-width:555px){
+// MOBILE STUFF________________________
+.mobile{
+	display:none;
+}
+.calenMob{
+	display: inline-block;
+}
+.panel-body, .panel-collapse{
+	background-color:rgba(50,50,50,0.9);
+}
+.panel-default{
+	// background-color: rgba(75,75,75,0.9);
+}
+
+@media(max-width:640px){
 	.dB{
 		display: none;
+	}
+	.mobile{
+		display: inline;
+	}
+	.header1{
+		height:100px;
+		h1{
+			font-size: 4em;
+		}
+		h1,h2,h3,h4{
+			padding:0px;
+			margin:0px;
+		}
+	}
+	.imgDiv{
+		height:200px;
 	}
 }
 @media(max-width: 767px){
@@ -160,6 +193,16 @@ body{
 		width:100%;
 		padding:0px;
 		margin:0px;
+	}
+	.container{
+	margin:0px;
+	padding:0px;
+	}
+	.header1{
+		height: 125px;
+		h1{
+			font-size: 2.5em;
+		}
 	}
 
 }

@@ -1,17 +1,66 @@
-  
+    <!--  MOBILE VIEW -->
+
+<div class="mobile">
+<accordion close-others="oneAtATime" class="container">
+    <accordion-group heading="should I beach it?" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+    <!-- WEATHER -->
+      <div ng-controller="WeatherCtrl" class="weather center row">
+          <div class="col-sm-4 row">{{name}} {{temp}}°F
+            <img ng-src="http://openweathermap.org/img/w/{{icon}}.png" alt="">
+          </div>
+          <div class="col-sm-4"><br>current drive time to Folly beach: <a>25 min</a></div>
+          <div class="col-sm-4"><br>current drive time to Sullivans Island: <a>12 min</a></div>
+        </div>
+    </accordion-group>
+
+    <!-- MUSIC -->
+    <accordion-group heading="music calendar" is-disabled="status.isFirstDisabled">
+    <div class="events bTop calenMob" ng-controller="EventsCtrl">
+      <div class="col-xs-12 row"><h3>live music calendar: <a class="btn btn-large btn-primary dB" href="#/music-calendar">expand</a></h3></div>
+        <div ng-repeat="event in events">
+          <div class="eventDiv row">
+            <div class="imgdiv col-xs-6">
+              <a ng-href="#/event-detail/{{event.id}}"><img ng-src="http://www.bandsintown.com/{{event.artists[0].name}}/photo/large.jpg" ng-alt="{{event.artists.name}}"></a>
+            </div>
+            <div class="col-md-6 row">
+              <h3>{{event.artists[0].name}}</h3>
+              <h4>{{event.venue.name}}</h4>
+              <h4>{{event.datetime | date:'medium'}}</h4>
+            </div>
+          </div>
+      </div>
+    </div>
+      
+    </accordion-group>
+
+    <!-- RESTAURANTS -->
+    <accordion-group heading="restaurant guide" is-disabled="status.isFirstDisabled">
+    
+      
+    </accordion-group>
+
+    <!-- TWITTER -->
+    <accordion-group heading="what's happening" is-disabled="status.isFirstDisabled">
+    <a class="twitter-timeline" href="https://twitter.com/CHSDashboard/lists/restaurants" data-theme="dark" data-chrome="noheader transparent"data-widget-id="476383533938642944">Tweets from https://twitter.com/CHSDashboard/lists/restaurants</a>
+      
+    </accordion-group>
+
+    
+  </accordion>
+
+</div>
 
 
-  <!-- SIDEBAR NAV -->
 
 
 
+<!-- COMPUTER VIEW___________________________________ -->
 
+<!-- MUSIC EVENTS -->
 
-    <!-- MUSIC STUFF -->
-
-
-  <div class="col-sm-4 events bTop" ng-controller="EventsCtrl">
-    <div class="col-xs-12 row"><h3>Live Music Calendar: <a class="btn btn-large btn-primary" href="#/music-calendar">expand</a></h3></div>
+<div class="dB">
+  <div class="col-xs-6 col-md-4 events bTop" ng-controller="EventsCtrl">
+    <div class="col-xs-12 row"><h3>live music calendar: <a class="btn btn-large btn-primary dB" href="#/music-calendar">expand</a></h3></div>
     <div ng-repeat="event in events">
         <div class="eventDiv row">
           <div class="imgdiv col-sm-6">
@@ -29,7 +78,8 @@
 
   <!-- RESTAURANT STUFF -->
 
-  <div class="restaurants col-sm-4 bTop" ng-controller="RestaurantsCtrl">
+  <div class="restaurants col-xs-6 col-md-4 bTop" ng-controller="RestaurantsCtrl">
+    <div class="col-xs-12 row"><h3>restaurant guide:</h3></div>
     <div class="" ng-repeat="restaurant in restaurants">
       <a ng-href="#/restaurant-detail/{{restaurant.factual_id}}" class="glyphicon glyphicon-map-marker"></a>{{restaurant.name}}
     </div>
@@ -38,9 +88,11 @@
 
   <!-- TWITTER STUFF -->
 
-  <div class="tweets col-sm-4 bTop">
+  <div class="tweets col-md-4 bTop">
+  <div class="col-xs-12 row"><h3>this is what's up:</h3></div>
   <a class="twitter-timeline" href="https://twitter.com/CHSDashboard/lists/restaurants" data-theme="dark" data-chrome="noheader transparent"data-widget-id="476383533938642944">Tweets from https://twitter.com/CHSDashboard/lists/restaurants</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
 </div>
 
 

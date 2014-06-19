@@ -1,4 +1,7 @@
 <div ng-controller="RestaurantsCtrl">
+	<div class="col-md-12 row header2 center">
+	    <div class="col-xs-4"><a href="#/main"> <h4><< back to dashboard</h4></a></div>
+  	</div>
 
 	<div class="col-md-5 rest">
 		<ul>
@@ -17,7 +20,7 @@
 	</div>
 	<div>
 		<div class="restImg col-md-4">
-			<img ng-src="http://maps.googleapis.com/maps/api/streetview?size=400x400&location={{restaurant.address}},{{restaurant.locality}}{{restaurant.postcode}}&fov=100&pitch=10">
+			<img class="restDetImg" ng-src="http://maps.googleapis.com/maps/api/streetview?size=400x400&location={{restaurant.address}},{{restaurant.locality}}{{restaurant.postcode}}&fov=100&pitch=10">
 		</div>
 	</div>
 

@@ -13,20 +13,28 @@
     
     <img class="eventImg" ng-src="http://www.bandsintown.com/{{artist.name}}/photo/large.jpg" ng-alt="{{event.artist.name}}">
     </div>
-    <a class="fb-share-button csmb facebook" data-href="{{}}">share</a>  
+    <div class="flexBox">
+      <a class="fb-share-button csmb facebook" data-href="{{}}" href><img class="center" style="width:30px; padding-top: 10px" src="images/facebook.png">  share  </a>
+      <a data-href="{{}}" href><img class="center" style="width:30px; padding-top: 10px" src="images/twitter.png"> tweet  </a>
+      <a ng-href="{{event.ticket_url}}" style="margin-top:10px;" class="btn btn-primary">buy tix</a>
+    </div>
+
   </div>
 
   <!-- MAP -->
 
 
   <div class="col-md-6">
-    <br>
+
+    <br><br>
+    <img src="http://maps.googleapis.com/maps/api/staticmap?center={{event.venue.latitude}},{{event.venue.longitude}}&zoom=13&scale=false&size=400x400&maptype=roadmap&sensor=false&format=png&visual_refresh=true&markers=size:mid%7Ccolor:red%7C{{event.venue.latitude}},{{event.venue.longitude}}">
+   <!--  <br>
     <iframe ng-bind-html="trustedHtml"
     width="100%"
     height="450"
     frameborder="0" style="border:0"
     ng-src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAJ_lVIxNq31PmzRUbMh9JIStQOE4_6-aQ&q={{event.venue.name}}"/>
-  </div>
+  </div> -->
  <!--          <div class="col-md-4">
             <google-map center=map.center zoom=map.zoom>
               <marker coords='longitude:{{event.venue.longitude}},latitude:{{event.venue.latitude}}'>

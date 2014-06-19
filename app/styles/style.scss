@@ -7,9 +7,7 @@ body{
 	color: #eee;
 	padding: 0px;
 }
-a{
-	text-decoration:none;
-	}
+
 
 .events{
 	// border: 1px solid #aad;
@@ -46,6 +44,12 @@ a{
 	}
 	background-color:#222;
 }
+.smImg{
+	height: 75px;
+	img{
+		height:100%;
+	}
+}
 .bigImgDiv{
 	position:relative;
 	height: 175px;
@@ -60,7 +64,7 @@ a{
 // width: 25px;
 // }
 .container{
-	background: rgba(50,50,50,0.9);
+	background: rgba(025,025,025,0.95);
 
 }
 .float-up{
@@ -75,6 +79,12 @@ a{
 }
 
 .header1{
+	a{
+	text-decoration:none;
+	}
+	a:hover{
+		text-decoration: none;
+	}
 	background-image: url('../images/street.jpg');
 	background-size:100%;
 	height: 150px;
@@ -159,6 +169,27 @@ a{
 .panel-default{
 	// background-color: rgba(75,75,75,0.9);
 }
+.restDiv{
+	margin-bottom: 10px;
+	border-bottom: 2px solid rgba(200,200,200,0.1);
+}
+h1,h2,h3,h4,h5,h6{
+	font-weight:200;
+}
+.calenMobDiv{
+	background-color:rgba(25,25,25,0.9);
+	margin:0px;
+}
+.icon{
+	width:20px;
+}
+.flexBox{
+	padding: 5% 10%;
+		display: -webkit-flex;
+	-webkit-flex-direction: row;
+	-webkit-justify-content: space-between;
+	-webkit-flex-wrap: wrap;
+}
 
 @media(max-width:640px){
 	.dB{
@@ -181,18 +212,19 @@ a{
 		height:200px;
 	}
 }
+
 @media(max-width: 767px){
 	.col-sm-4{
 		padding: 0px;
 		margin: 0px;
 	}
-	h1,h2,h3,h4,h5,h6{
+	h1,h2,h3,h4,h5,h6,ul{
 		text-align:center;
 	}
-	.eventImg{
-		width:100%;
+	.eventImg, .restDetImg{
+		width:80%;
 		padding:0px;
-		margin:0px;
+		margin-left:10%;
 	}
 	.container{
 	margin:0px;

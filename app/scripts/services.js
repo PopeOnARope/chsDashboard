@@ -39,4 +39,13 @@ angular.module('chsdashboardApp.services', [])
 // 			return restaurantsPromise;
 // 		}
 // 	};
-// });
+// })
+
+.factory('SafetyFactory', function(){
+	var getAll=function(){
+		return restData;
+	}
+	return {
+		getAll: getAll
+	}
+});

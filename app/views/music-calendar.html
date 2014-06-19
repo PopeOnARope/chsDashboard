@@ -7,8 +7,9 @@
     <div ng-repeat="event in events">
         <div class="eventDiv col-xs-4 row">
           <div class="imgdiv col-sm-12">
-            <div class="bigImgDiv"><a ng-href="#/event-detail/{{event.id}}"><img class="bigImg" ng-src="http://www.bandsintown.com/{{event.artists[0].name}}/photo/large.jpg" ng-alt="{{event.artists.name}}"></a>
+            <div class="bigImgDiv" ng-style="styleSomeShit(event)"><a ng-href="#/event-detail/{{event.id}}"><span class="bigLink"></span></a>
 	            <div class="float-up">
+	            	<br>
 	            	<h3><span>{{event.artists[0].name}}</span></h3>
     				<span><i>@</i></span>
     	            <h4><span>{{event.venue.name}}</span></h4>

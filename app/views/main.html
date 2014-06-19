@@ -84,7 +84,7 @@
   <div class="restaurants col-xs-6 col-md-4 bTop" ng-controller="RestaurantsCtrl">
     <div class="col-xs-12 row "><h3>restaurant guide:</h3></div>
     <div class="row restDiv" ng-repeat="restaurant in restaurants">
-      <div  class="col-xs-4 smImg"><a ng-href="#/restaurant-detail/{{restaurant.factual_id}}"><img ng-src="http://maps.googleapis.com/maps/api/streetview?size=400x400&location={{restaurant.address}},{{restaurant.locality}}{{restaurant.postcode}}&fov=100&pitch=10"></a></div>
+      <div  class="col-xs-4 smImg"><a ng-href="#/restaurant-detail/{{restaurant.factual_id}}"><img ng-src="http://maps.googleapis.com/maps/api/streetview?size=400x400&location={{restaurant.address}},{{restaurant.locality}}{{restaurant.postcode}}&fov=100&pitch=10&key=AIzaSyCO1PEEbS7r3cYR3285gebd5tsIQgWP6Jk"></a></div>
       <div class="col-xs-8"><a class="glyphicon glyphicon-map-marker" ng-href="#/restaurant-detail/{{restaurant.factual_id}}">{{restaurant.name}}</a></div>
     </div>
   </div>

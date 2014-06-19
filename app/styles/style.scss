@@ -55,8 +55,17 @@ body{
 	height: 175px;
 	background-size:100%;
 	background-repeat:no-repeat;
+	background-position: center;
+	background-color: rgba(25,25,25,0.5);
 	margin: 3%;
 	z-index: 0;
+}
+.bigLink{
+  position:absolute; 
+  width:100%;
+  height:100%;
+  top:0;
+  left: 0;
 }
 
 // .eventDiv{

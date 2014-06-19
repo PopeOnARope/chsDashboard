@@ -24,11 +24,16 @@ angular.module('chsdashboardApp.controllers', [])
 		zoom: 8,
 		draggable: true
 		};
+	$scope.styleSomeShit = function(styleBG) {
+		var test = {'background-image': "url('http://www.bandsintown.com/" + styleBG.artists[0].name + "/photo/large.jpg')"}
 
+		console.log(test);
+		return test;
+	}
 	EventsFactory.async().then(function(data){
 
 		$scope.events = data.data;
-		
+
 		console.log($scope.events);
 		var eventId = Number($routeParams.id);
 		// console.log($scope.events[0].id);
